@@ -1,0 +1,54 @@
+.sprite {
+    background-image: url(spritesheet.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.sprite-icon-diplomat {
+   
+    width: 52px;
+    height: 36px;
+    background-position: -5px -5px;
+}
+
+.sprite-icon-diplomat-2 {
+    width: 52px;
+    height: 36px;
+    background-position: -67px -5px;
+}
+
+.sprite-icon-lists {
+    width: 44px;
+    height: 40px;
+    background-position: -5px -51px;
+}
+
+.sprite-icon-lists-2 {
+    width: 44px;
+    height: 40px;
+    background-position: -59px -51px;
+}
+
+.sprite-icon-pan {
+    width: 49px;
+    height: 49px;
+    background-position: -5px -101px;
+}
+
+.sprite-icon-pan-2 {
+    width: 50px;
+    height: 50px;
+    background-position: -129px -5px;
+}
+
+.sprite-icon-star {
+    width: 44px;
+    height: 44px;
+    background-position: -113px -65px;
+}
+
+.sprite-icon-star-2 {
+    width: 44px;
+    height: 44px;
+    background-position: -64px -119px;
+}

@@ -1,0 +1,41 @@
+@media only screen  and (min-width: 1202px) {
+	body {
+		max-width: 1920px;
+	}
+	.wrapper {
+		background-size: cover;
+	}
+	#nav-head {
+ 		width: 100%;
+ 	}
+	#nav-head ul {
+		width:60.9%;
+	}
+ 	#nav-head li:first-child{
+ 		margin-left:11.4% ;
+ 	}
+ 	#nav-head li a {
+ 		margin-left: 35%;
+ 	}
+	.srvices-item-block {
+		min-width: 250px;
+	}
+	.srvices-item-block p {
+		font-size: 13px;
+	}
+	.srvices-item-block h4 {
+		font-size: 20px;
+	}
+	.srvices-item-block:hover, .icon-icon-lists:hover {
+		margin: 0px;
+		border-bottom: 3px solid #c7b299;
+		padding: 0px;
+	}
+	.img-hiiden {
+		left:37%;
+		bottom:77%;
+	}
+	.bowser-img {
+	 
+	}
+}

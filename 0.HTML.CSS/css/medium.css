@@ -1,0 +1,58 @@
+@media only screen  and (min-width: 992px) and (max-width: 1201px) {
+	body {
+		max-width: 1201px;
+		min-width: 767px;
+		width: 100%;
+	}
+#nav-head li:first-child {
+    margin-left: 10%;
+	}
+	#nav-head{
+		width:100%;
+		max-width: 1200px;
+		height: auto;
+	}
+	#nav-head li{
+		max-width: 100%;
+		margin-right: 4%;
+	}
+	#nav-head li a {
+		width: 100%;
+		max-width: 70px;
+	}
+	nav ul {
+		max-width: 837px;
+		width: 100%;
+		height: auto;
+	}
+	.services {
+		margin-top: 0%;
+	}
+	.srvices-item {
+		width: 75%;
+	}
+	.boxis {
+    max-width: 1230px;
+		width: 100%;
+	}
+	.browser-img-item img:hover {
+		transform: none;
+		transition:none;
+	}
+	.ph-pro-size {
+		max-width: 370px;
+		width: 100%;
+		height: auto;
+		margin: 0 auto;
+	}
+	.ph-pro-size img{
+		width: 100%;
+		height: auto;
+	}
+	.flex-panel{
+		justify-content:flex-start;
+	}
+	.btn-panel {
+		margin-left: 10%;
+	}
+}

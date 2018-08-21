@@ -1,0 +1,144 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.icon-icon-cart {
+  background-image: url(sprite.png);
+  background-position: -610.3px -197px;
+  width: 20px;
+  height: 24px;
+}
+.icon-icon-diplomat {
+  background-image: url(sprite.png);
+  background-position: -508px -241px;
+  width: 52px;
+  height: 36px;
+}
+.icon-icon-lists {
+  background-image: url(sprite.png);
+  background-position: -420px -285px;
+  width: 44px;
+  height: 40px;
+}
+.icon-icon-pan {
+  background-image: url(sprite.png);
+  background-position: -554px -135px;
+  width: 49px;
+  height: 49px;
+}
+.icon-icon-play {
+  background-image: url(sprite.png);
+  background-position: -420px -127px;
+  width: 70px;
+  height: 70px;
+}
+.icon-icon-search {
+  background-image: url(sprite.png);
+  background-position: -586px -241px;
+  width: 24px;
+  height: 24px;
+}
+.icon-icon-star {
+  background-image: url(sprite.png);
+  background-position: -522px -196px;
+  width: 44px;
+  height: 44px;
+}
+.icon-icon1 {
+  background-image: url(sprite.png);
+  background-position: -566px -197px;
+  width: 44px;
+  height: 44px;
+}
+.icon-icon2 {
+  background-image: url(sprite.png);
+  background-position: -474px -197px;
+  width: 48px;
+  height: 44px;
+}
+.icon-icon3 {
+  background-image: url(sprite.png);
+  background-position: -464px -241px;
+  width: 44px;
+  height: 44px;
+}
+.icon-icon4 {
+  background-image: url(sprite.png);
+  background-position: -420px -241px;
+  width: 44px;
+  height: 44px;
+}
+.icon-icon5 {
+  background-image: url(sprite.png);
+  background-position: -420px -197px;
+  width: 54px;
+  height: 44px;
+}
+.icon-link1 {
+  background-image: url(sprite.png);
+  background-position: -603px -127px;
+  width: 26px;
+  height: 26px;
+}
+.icon-logo-01 {
+  background-image: url(sprite.png);
+  background-position: -420px 0px;
+  width: 210px;
+  height: 127px;
+}
+.icon-logo-02 {
+  background-image: url(sprite.png);
+  background-position: -210px 0px;
+  width: 210px;
+  height: 210px;
+}
+.icon-logo-02_1_ {
+  background-image: url(sprite.png);
+  background-position: 0px 0px;
+  width: 210px;
+  height: 210px;
+}
+.icon-logo-03 {
+  background-image: url(sprite.png);
+  background-position: -210px -210px;
+  width: 210px;
+  height: 130px;
+}
+.icon-logo-04 {
+  background-image: url(sprite.png);
+  background-position: 0px -210px;
+  width: 210px;
+  height: 164px;
+}
+.icon-logo {
+  background-image: url(sprite.png);
+  background-position: -490px -127px;
+  width: 64px;
+  height: 56px;
+}
+.icon-lupa {
+  background-image: url(sprite.png);
+  background-position: -560px -241px;
+  width: 26px;
+  height: 25px;
+}
+.icon-ol-numeration {
+  background-image: url(sprite.png);
+  background-position: -603px -153px;
+  width: 21px;
+  height: 21px;
+}
