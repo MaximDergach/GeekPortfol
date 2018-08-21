@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Проба</title>
+</head>
+<body>
+	<script>
+		function user(name, age) {
+			this.name = name
+			this._age = age
+
+			user.prototype.getAge = function() {
+				return this._age
+			}
+
+			user.prototype.setAge = function(newAge) {
+				if (newAge > 0) {
+					this._age = newAge;
+				} else {
+					console.error('Возраст не может быть отрецательным')
+				}
+			} 
+		}
+
+		//var example = new user('Andrey', 15)
+		/*console.log('name= ' + example.name);
+		example.setAge(10)
+		console.log('age= ' + example.getAge());
+
+		var obj1 = {
+			name: 'maxim'
+		} 
+		var obj2 = {
+			__proto__: obj1
+		}
+		console.log(obj2.name)
+		*/
+/*		Array.prototype.printEvery = function() {
+			for (var i = 0; i < this.length; i++) {
+				console.log(this[i])
+			}
+		}
+
+		[1, 2, 3, 4, 5].printEvery()*/
+
+		function superUser(name, age, password) {//Наследование от родительского User
+			user.apply(this, arguments)	//наследует аргумент user
+			this._password = password
+		}
+		superUser.prototype = Object.create(user.prototype)//наследует прототип от user.proto
+
+		superUser.prototype.banUser = function(username) {
+			console.log(`${username} is banned`)
+		}
+
+		var superExampler = new superUser('Lui', 39, 'qwrt1234')
+		console.log(superExampler)
+		var userExample = new user('maxim', 30)
+		console.log(userExample)
+		superExampler.banUser('Victor')
+
+
+
+	</script>
+</body>
+</html>

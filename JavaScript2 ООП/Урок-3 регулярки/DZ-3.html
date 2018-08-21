@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DZ-3</title>
+</head>
+<body>
+	<script>
+	
+		var text = "Lorem 'ipsum' dolor 'sits' amet, don't adipisicing elit. 'Commodi', maiores? aren't"
+		console.log(text.replace(/(?!s'|[a-z]'[a-z])([\s\S])'|^'/g, '$1"'))
+							//		1        2          3     4        5
+							/*1- естлив ковычка не после s
+							  2- ковычка между букв
+							  3- ковычка после пробела
+							  4-ковычка в конце слова
+							  5- меняем найденою группу на "*/
+
+		// ---
+
+	</script>
+</body>
+</html> 	 	 	

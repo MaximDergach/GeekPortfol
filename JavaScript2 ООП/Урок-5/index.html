@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Marcet</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style>
+	textarea{display: block;margin: 20px;max-width: 250px;width: 324px;height: 150px;}
+
+</style>
+</head>
+<body>
+	<!-- https://github.com/AlexTolmachev/geekbrains-lesson-api/blob/master/comments_api_doc.md -->
+		<div class="wrapper">
+			<div id="cart">
+
+			</div>
+
+			<div id="total">
+				0
+			</div>
+		</div>
+
+		<input type="text" id="product-input" placeholder="Название продукта">
+		<input type="text" id="price-input" placeholder="Цена (руб)">
+		<button type="button" id="add-button">Добавить товар</button>шт<br>
+		<button type="button" id="delButtom">Удалить товар</button>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			const productInput = $('#product-input')
+			const priceInput = $('#price-input')
+			const addButton = $('#add-button')
+			const total = $('#total')
+			const delButtom = $('#delButtom')
+			const baseUrl = 'http://85.119.150.33'
+			let userId = ''
+
+			$.ajax({
+				url:`${baseUrl}/shop`,
+				contentType:'json',
+				success: function(data) {
+					userId = data.user_id
+					console.log('Идишник корзины ' + userId)
+				}	
+			})
+
+			addButton.click(function(){
+				const product = productInput.val()
+				const price = priceInput.val()
+				$.ajax({
+					url:`${baseUrl}/shop?user_id=${userId}&product=${product}&price=${price}`,
+					type:'post',
+					contentType:'json',
+					success: function(data){
+						console.log(data)
+
+						$('<div/>', {
+							class: 'cart-item',
+							html: `${product} | ${price}`,
+							click: function() {
+								const productId = $(this).attr('productId')
+								console.log(productId) //console.log(this)
+							}
+						})
+						.attr('productId', data.product_id)
+						.appendTo('#cart')
+						const newTotal = parseFloat(total.html()) + parseFloat(price)
+						total.html(newTotal)
+
+					}
+				})
+			})
+			delButtom.click(function(){
+					$.ajax({//удаление товара
+				url:`${baseUrl}/shop?user_id=${userId}&product_id=${productId}`,
+				type:'DELETE',
+				contentType:'json',
+				success: function(data){
+					console.log(data)
+				}
+			})
+			})
+		
+
+		})
+
+		
+
+
+	</script>
+</body>
+</html>

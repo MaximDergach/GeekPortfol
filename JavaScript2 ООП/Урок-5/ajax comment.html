@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Marcet</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style>
+	.textInput{background: #e1e1e1;
+display: inline-block;
+width: 246px;
+min-height: 40px;
+line-height: 40px;
+border-radius:10px;
+margin-bottom: 10px;
+padding-left: 10px;}
+</style>
+</head>
+<body>
+	
+	<div id="textComment">
+		<p>Комментари</p>
+	</div>
+	<form action="#">
+		<textarea name="coments" id="comments-input" cols="30" rows="10" placeholder="Ваше сообщение" ></textarea>
+		<br>
+		<button type="button" id="submit" method="post">Отправить</button>
+		<input type="reset" id="reset" >
+		
+		<hr>
+		<button id="getAllComments">Показать все комментарии</button>
+		<hr>
+			<button id="addLike">Like комментария по ID</button>
+		<input id="commentId" type="text" placeholder="Поле для ID комментария">
+		<button id="delComments">Удалить комментарий по ID</button>
+	
+		
+	</form>
+	<script type="text/javascript">
+		const baseUrl = 'http://85.119.150.33';
+
+		$(document).ready(function(){
+			const productInput = $('#product-input');
+			const priceInput = $('#price-input');
+			const addButton = $('#add-button');
+			const total = $('#total');
+			
+			const commentArea = $('#comments-input') ;
+			let commentId = "";
+			const btn = $('#submit');
+			let like = 0;
+
+			$('#getAllComments').on('click', getAllCommAJAX); //Вешаем обработчик на кнопку
+
+			$('#delComments').on('click', delCommAJAX);//Вешаем обработчик на кнопку
+
+			$('#addLike').on('click', addLikeAJAX)//Обработчик лайков
+			
+			btn.click(function(){
+				let textComment = commentArea.val();
+				$.ajax({
+					url: `${baseUrl}/comments?text=${textComment}`,
+					type:'POST',
+					contentType:'json',
+					success: function(data){
+						let commentId = data.comment_id;
+						console.log(data);
+						$(commentArea).val( '' );
+
+					}
+				})					
+			})			
+		})
+
+		function getAllCommAJAX () {
+			$.ajax({
+				url: `${baseUrl}/comments`,
+				type:'GET',
+				contentType:'json',
+				success: function(data){
+					let commentId = data.comment_id;
+					console.log(data);
+				}
+			})					
+		}
+
+		function delCommAJAX () {
+			const msg = $('#commentId').val();
+			$.ajax({
+				url: `${baseUrl}/comments?comment_id=${msg}`,
+				type:'DELETE',
+				contentType:'json',
+				success: function(data){
+					console.log(data);
+				}
+			})	
+		}
+
+		function addLikeAJAX() {
+			const msg = $('#commentId').val();
+			$.ajax({
+				url: `${baseUrl}/comments?comment_id=${msg}`,
+				type:'PATCH',
+				contentType:'json',
+				success: function(data) {
+					console.log(data)
+				}
+			})
+		}
+
+	</script>
+</body>
+</html>

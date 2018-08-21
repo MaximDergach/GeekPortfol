@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<div class="items">
+		<div>
+			<input class="item" type="text"></input>
+		</div>
+
+		<div>
+			<input class="item" type="text"></input>
+		</div>
+
+		<div>
+			<input class="item" type="text"></input>
+		</div>
+		
+	</div>
+	<script>
+
+		function Car(color, wheels, engine) {
+			this.color = color;
+			this.wheels = wheels;
+			this.engine = engine
+		}	
+		var audi = new Car('red', 4, {volue: 2.0, power:224});
+
+		 var bmw = new Car('white', 5, {volue: 4.0, power:321});
+		 console.log(audi)
+		 console.log(bmw)
+
+		function Vehicle() {
+			this.x = 0;
+			this.y = 0;
+			this.z = 0;
+			
+		}		
+		Vehicle.prototype.move = function(x, y, z) {
+			this.x = x;
+			this.y = y;
+			this.z = z;
+		}
+
+		function Car() {
+			Vehicle.call(this)
+		}
+		Car.prototype = Object.create(Vehicle.prototype);
+		Car.prototype.constructor = Car;
+		var audi = new Car();
+		console.log('Ауди это машина', audi instanceof Car)
+		console.log()
+	</script>
+	
+</body>
+</html>

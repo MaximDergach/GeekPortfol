@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AJAX</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style>
+	ul{width: 150px;height: 50px;background: red}
+	li{width: 150px;height: 50px;background: green;border: 2px solid #000}
+</style>
+</head>
+<body>
+
+	<input id="inputDog" list="datalist">
+	<datalist id="datalist">
+	</datalist>
+
+	<button id='add'>Загрузить картинку</button>
+
+	<div id="insertImg"></div>
+
+	<script>
+		
+
+ 		function Options (){}
+
+ 		Options.prototype.renderOptions = function(){
+ 			for(i=0; i<this.namePets.length; i++) {
+ 				$('<option/>', {
+ 					value: this.namePets[i]
+ 				}).appendTo($('#datalist'));
+ 			}
+ 			this.handler();
+ 		};
+
+ 		Options.prototype.handler = function(){
+ 			var handler = this;
+ 			$('#add').on('click', function(){
+ 				var data = $('#inputDog').val();
+ 				if(data != ''){
+ 					handler.getDogAJAX(data);
+ 				} else {
+ 					alert('Выберите породу!');
+ 				}
+ 				
+ 			});
+ 		};
+
+ 		Options.prototype.AJAX=function() {
+ 			var AJAX = this;
+ 			$.ajax({
+				url:'https://dog.ceo/api/breeds/list/all',
+				type:'get',
+				dataType: 'json',
+				success: function(data){
+				var namePets = [];//Объявляем массив для сбора пород
+					for(var key in data.message){ //перебираем входящие данные
+ 						namePets.push(key); //ключ добавляем в массив
+ 					}
+ 					AJAX.namePets = namePets;
+ 					AJAX.renderOptions();	
+ 				}
+ 			});
+ 		};
+
+ 		Options.prototype.getDogAJAX=function(data){
+ 			var url = 'https://dog.ceo/api/breed/'+data+'/images/random';
+ 			$.ajax({
+				url: url,
+				type:'get',
+				success: function(data){
+					$('#insertImg').html($('<img>', {src: data.message}));
+ 				},
+ 				error: function(){
+ 					alert('Порода не найдена!');
+ 				}
+ 			});
+ 		}
+
+ 		var options = new Options();
+ 		options.AJAX();
+</script>
+</body>
+</html>

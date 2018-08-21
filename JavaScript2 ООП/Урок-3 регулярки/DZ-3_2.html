@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DZ-3</title>
+	<style>
+	form{margin:30px;}
+	fieldset{width:265px;}
+	label{padding-right:10px;}
+</style>
+</head>
+<body>
+
+	<form action="" method="post" onsubmit="valid(this)">
+
+		<fieldset>
+			<legend>Моя форма</legend>	
+			<p><label for="name_form">Имя</label> <input type="text" name="name" id="name_form"  class="inp" placeholder="Ваше имя"></p>
+			<p><label for="phone_form">Телефон</label> <input type="text" name="phone" id="phone_form" class="inp" placeholder="Ваш телефон" ></p>
+			<p><label for="email_form">E-mail</label> <input type="email" name="email" id="email_form" class="inp" placeholder="Email"></p>
+			<p><textarea name="t_area" id="t_area" cols="30" rows="10" id="t_area" placeholder="Ваше сообщение"></textarea></p>
+			<input type="submit" value="Отправить" id="btn" name="submit"> 
+			<input type="reset" value="Сброс">
+		</fieldset>
+
+	</form>
+
+	<script>
+
+		
+		function valid(form){
+
+			var name = form.name.value;
+			var phone = form.phone.value;
+			var email = form.email.value;
+			var t_area = form.t_area.value;
+			var pattern_name = /[а-яёА-ЯЁ\s]+$/g; 
+			var pattern_phone = /\+\d[(](\d{3})[)](\d{3})-(\d{4})/g;
+			var pattern_email = /^[a-z0-9](([_\-\.]?[a-z0-9]+)*)@([a-z0-9]+)(([_\.\-]?[a-z0-9]+)*)\.[a-z]+$/gi;
+			var pattern_t_area = /[^\<\>\[\]%'`]+$/g;
+			var fals = false;
+
+			if (pattern_name.test(name) == false || name == '') {
+				fals = 'Не те символы или буквы'
+
+			} else if(pattern_phone.test(phone) == false || phone == '') {
+				fals = 'Номер не подходит'
+
+			} else if(pattern_email.test(email) == false || email == '') {
+				fals = 'Почта указана не коректна'
+
+			}else if (pattern_t_area.test(t_area) == false || t_area == '') {
+				fals = 'Поле с сообщением пуста'
+
+			}else {
+
+			}
+			if (fals) {
+				colorBord(this)
+				return alert(fals)
+			}
+		}
+		var  colorBord= function() {
+			document.getElementById("name_form").style.border="2px solid #FF0000"
+		} 
+		
+	/*var inp = document.querySelectorAll('.inp')
+	var name_form = document.getElementById('name_form')
+	var phone_form = document.getElementById('phone_form') 
+	var email_form = document.getElementById('email_form') 
+	var forma = document.getElementById('forma') 
+	var btn = document.getElementById('btn') 
+	console.log(inp)*/
+
+	
+	///[а-яёА-Я\s]+$/g для текста
+	// ^[a-zA-Z0-9](([_\-\.]?[a-zA-Z0-9]+)*)@([a-zA-Z0-9]+)(([_\.\-]?[a-zA-z0-9]+)*)\.[a-zA-Z]+$
+	//   для почты
+	// \+\d[(](\d{3})[)](\d{3})-(\d{4}) номер телефона (+7(000)000-0000)
+
+
+</script>
+</body>
+</html> 	 	 	

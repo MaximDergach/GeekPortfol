@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Proto</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+	function Container() {
+		this.id= ''
+		this.className= ''
+		this.htmlCode= ''
+	}
+
+	Container.prototype.render = function() {
+		return this.htmlCode
+	}
+
+	function Menu(id, className, items) {
+		Container.call(this)
+		this.id = id;
+		this.className = className;
+		this.items = items;
+	}
+
+	Menu.prototype = Container.prototype
+	Menu.prototype.constructor = Menu
+	Menu.prototype.render = function() {
+	}
+
+	var menu = new Menu('my_menu', 'my_item', {})
+
+	// ---
+
+
+
+
+</script>

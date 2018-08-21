@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>RegExp</title>
+</head>
+<body>
+	<script>
+	
+	var reg0 = /\d/g
+
+	var str0 = 'hay mr.agent 007'
+
+	console.log(reg0.test(str0))
+
+	if ((reg0.test(str0)) == true) {//булевое возрат поиска метод .test
+		alert('РАБОТАЕТ')
+	} else {
+		alert('не работает')
+	}
+		var reg = /\b\w+?\b/g//Регулярное вырожение
+		var str = 'insert 23 google 123 bitch 4421'//Текст который нужно обработать
+
+		console.log(str.match(reg))//.MAATCH сохроняет в массив результат поиска ==массив
+		var reg2 = /google/g
+		console.log(str.search(reg2))//метод .search ищет индекс результата поиска (google начинается с 7ого символа) == 7
+		var num1 = /\d/g//естлив \d(поиск цифр) ненаходит цифр то выводит == -1
+
+		/*if ((str.search(num1)) == -1) {
+			alert('XXX++--Что-то сломалосьXXX++--')
+		} else {
+			console.log(str.search(num1))
+		}*/
+		
+		var str2 = 'Dergach.		Maxim    Aleksandrov, ich'
+		console.log(str2.split(/[,.\s]+/g)) 
+
+		//var str3 = str.replace(/\d/g, '<Борода') 
+		
+		var str3 = str.replace(/\d/g, function(match) {
+			console.log(match)
+			return 'Борода'
+		});
+		console.log(str3)
+	</script>
+</body>
+</html>

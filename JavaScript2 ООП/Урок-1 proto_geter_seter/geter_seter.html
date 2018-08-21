@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Проба</title>
+</head>
+<body>
+	<script>
+	function User(name, age) {//функция конструктор
+		this.name = name;//уникальные свойства записываются в объект
+		this._age = age;//_приватное свойство
+
+	}
+
+	User.prototype.getAge = function() {//геттер
+		return this._age
+	}
+
+	User.prototype.setAge = function(newAge) {//сеттер
+		if (newAge > 0) {
+			this._age = newAge
+		} else {
+			console.error('Возраст слишком мал')
+		}
+	}
+
+	var exemple = new User('Maxim', 30)
+	console.log(exemple)
+	console.log(exemple.name)
+
+	exemple.setAge(50)
+	
+
+	console.log(exemple.getAge())
+
+	</script>
+</body>
+</html>

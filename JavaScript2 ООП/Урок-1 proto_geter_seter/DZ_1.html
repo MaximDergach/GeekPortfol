@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DZ_1</title>
+</head>
+<body>
+	<script>
+		function Container (id, className) {
+			this.id = id || ''
+			this.className = className || ''
+			this.html = ''
+
+		}
+
+		Container.prototype.render = function(){
+			return this.html
+		}
+
+		// ---
+
+		function Menu (id, className, menuItems = []) {
+			//наследуем свойство и методы у Container
+			Container.apply(this, arguments)
+			this.menuItems = menuItems
+		}
+
+		Menu.prototype = Object.create(Container.prototype)
+		
+		Menu.prototype.rendermenuItems = function() {
+			var htmlArray = this.menuItems.map(function(item) {
+				return item.render()
+			})
+			return htmlArray.join("\n")
+		}
+
+		Menu.prototype.render = function(){
+			return `
+				
+				<ul id='${this.id}' className='${this.className}'>
+					${this.rendermenuItems()}
+					</ul>	
+
+			`
+		}
+
+		// ---
+
+		function menuItems(id, className, text = '', link = '') {
+			Container.apply(this, arguments)
+
+			this.text = text
+			this.link = link
+		}
+
+		menuItems.prototype = Object.create(Container.prototype)
+
+		menuItems.prototype.render = function() {
+			return `
+
+				<li id='${this.id}' className='${this.className}'>
+					<a href='${this.link}'>
+
+						${this.text}
+
+					</a>
+
+				</li>	
+			`
+		}
+
+		// ---
+
+		var items = [
+			new menuItems('el1', 'menu-items', 'Образование', 'https://geekbrains.ru/'),
+			new menuItems('el2', 'menu-items', 'Развлечение', 'https://www.youtube.com/'),
+			new menuItems('el3', 'menu-items', 'Беседка', 'http://www.forum-m.ru/')
+		]
+
+		var exampleMenu = new Menu('el4', 'menu', items)
+
+		document.write(exampleMenu.render())
+	</script>
+</body>
+</html>

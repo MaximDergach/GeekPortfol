@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<style>
+	.tabs__content {
+		display: none; /* по умолчанию прячем все блоки */
+	}
+	.tabs__content.active {
+		display: block; /* по умолчанию показываем нужный блок */
+	}
+
+</style>
+</head>
+<body>
+	<div class="tabs">
+
+		<ul class="tabs__caption">
+			<li class="active">1-я вкладка</li>
+			<li>2-я вкладка</li>
+		</ul>
+
+		<div class="tabs__content active">
+			Содержимое первого блока Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Коварный маленький приставка себя сих заголовок. Это заголовок, рыбными коварный единственное которое, лучше всемогущая города продолжил свое даль рот до.
+		</div>
+
+		<div class="tabs__content">
+			Содержимое второго блока Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat culpa ratione porro impedit voluptates sit! Neque velit qui ipsam quasi omnis tenetur quas perspiciatis magnam, eveniet corporis architecto repellat tempore?
+		</div>
+
+	</div><!-- .tabs-->
+	<script>
+		(function($) {
+			$(function() {
+
+				$('ul.tabs__caption').on('click', 'li:not(.active)', function() {
+					$(this)
+					.addClass('active').siblings().removeClass('active')
+					.closest('div.tabs').find('div.tabs__content').removeClass('active').eq($(this).index()).addClass('active');
+				});
+
+			});
+		})(jQuery);
+		(function($) {
+			$(function() {
+
+				$('ul.tabs__caption').on('click', 'li:not(.active)', function() {
+					$(this)
+					.addClass('active').siblings().removeClass('active')
+					.closest('div.tabs').find('div.tabs__content').removeClass('active').eq($(this).index()).addClass('active');
+				});
+
+			});
+		})(jQuery);
+
+
+	</script>
+</body>
+</html>

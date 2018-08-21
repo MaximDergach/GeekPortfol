@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AJAX&JSON</title>
+</head>
+<body>
+	<script>
+		function ajaxGet(url, callback) {
+			var start = Date.now()//Запрос времени передачи
+
+			var xhr = new XMLHttpRequest()
+
+			xhr.open('get', url)//какой метод и какаой адрес
+
+			xhr.send()//метод посылает запрос
+
+			xhr.onload = function () {
+				if (xhr.status !== 200) {
+					return console.error('Status error' + xhr.status)
+				}
+
+				var data = JSON.parse(xhr.responseText)//естлив ответ пришол в формате JSON мы его распарсиваем в объект	
+				console.log('Время передачи данных ' + (Date.now() - start) + 'мс')//вывод времени передачи запроса
+				callback(data)
+			}
+
+		}
+		
+		ajaxGet('https://dog.ceo/api/breeds/image/random', function(data) {
+			console.log(data)
+			/*alert(data.message)*///вывод meassage адреса страницы
+		})
+
+		var User = {
+			name: 'Maxim',
+			lastName: 'Dergach',
+			age: 31
+		}
+		var str = JSON.stringify(User)//Превращам объект в строку
+		console.log(str)
+		var raspars = JSON.parse(str)//Превращаем строку в объект
+		console.log(raspars)
+
+		
+	</script>
+</body>
+</html>

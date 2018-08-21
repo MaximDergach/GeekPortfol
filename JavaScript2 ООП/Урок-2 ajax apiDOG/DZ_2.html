@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>JSON-DZ-1</title>
+</head>
+<body>
+
+	<img alt="Тут картинка" id="image">
+	<script>
+		var User = {//создали объект пользователя
+			name:'Maxim',
+			lastName:'Dergach',
+			age:30,
+			password:'qwerty123',
+			login:'asdasd'
+		}
+
+		var str = JSON.stringify(User)//преобразуем объект в строку
+
+		var pars = JSON.parse(str)//преобразуем преобразованную строку обратно в объект
+
+		console.log(str)
+		console.log(pars)
+
+		function ajaxGet(url, callback) {
+			var xhr = new XMLHttpRequest()
+
+			xhr.open('get', url)
+
+			xhr.send()
+
+			xhr.onload = function() {
+				if (xhr.status !== 200) {
+					return console.error('Status error' + xhr.status)
+				}
+				var data = JSON.parse(xhr.responseText)
+				callback(data)
+			}
+		}
+		var img = document.getElementById('image')
+		console.log(img)
+
+		img.onclick = function() {
+			ajaxGet('https://dog.ceo/api/breeds/image/random', function(data) {
+			img.src = data.message
+			console.log(data.message)
+		} )}
+
+		
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>RegExp-2</title>
+</head>
+<body>
+
+	<input type="input" id="inp">
+	
+	<div id="block"></div>
+
+	<script>
+
+		var inp = document.getElementById('inp')
+		var block = document.getElementById('block')
+		var reg = /\((.+?)\)/g
+		inp.onmousemove = function() {
+			inp.style.border = '4px solid red'
+		}
+		inp.onmouseout = function() {
+			inp.style.border = '1px solid #000'
+		}
+		inp.oninput = function(a) {
+			block.innerText = a.target.value.replace(reg, function(match, group1) {
+
+				return group1.toUpperCase()
+			})
+		}
+
+		/*var reg = /__(.+?)__/g
+
+		var str = '__hello__ bad world __kill__ you'
+
+		var newStr = str.replace(reg, function(match, group1) {
+			
+			return group1.toUpperCase().split('').reverse().join('')
+		});
+
+		console.log(str)
+		console.log(newStr)
+*/
+
+	</script>
+</body>
+</html>

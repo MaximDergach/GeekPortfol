@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Marcet</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style>
+	.textInput{background: #e1e1e1;
+display: inline-block;
+width: 246px;
+min-height: 40px;
+line-height: 40px;
+border-radius:10px;
+margin-bottom: 10px;
+padding-left: 10px;}
+</style>
+</head>
+<body>
+	
+	<div id="textComment">
+		<p>Комментари</p>
+	</div>
+	<form action="#">
+		<textarea name="coments" id="comments-input" cols="30" rows="10" placeholder="Ваше сообщение" ></textarea>
+		<button type="button" id="submit" method="post">Отправить</button>
+		<input type="reset" id="reset" >
+		
+	</form>
+	<script type="text/javascript">
+		
+		$(document).ready(function(){
+			const productInput = $('#product-input')
+			const priceInput = $('#price-input')
+			const addButton = $('#add-button')
+			const total = $('#total')
+			const baseUrl = 'http://85.119.150.33'
+			const commentArea = $('#comments-input') 
+			let commentId = ""
+			const btn = $('#submit')
+			let like = 0
+			
+
+
+			btn.click(function(){
+				let textComment = commentArea.val()
+				$.ajax({
+					url: `${baseUrl}/comments?text=${textComment}`,
+					type:'post',
+					contentType:'json',
+					success: function(data){
+
+						let commentId = data.comment_id//может както нада засунуть каждый коммент в отдельный массив???
+						
+
+						$.ajax({
+							url: `${baseUrl}/comments`,
+							contentType: 'json',
+							success:function(data){
+								$('#textComment').append(`<div class="textInput">${textComment}<br>${commentId}</div><br>`)
+								console.log('Текст комментария ' + '"'+textComment + '"' + ' ID пользователя ' + '"' + commentId + '"')
+								console.log(commentId)
+							$('.textInput').click(function(){//лайк комментов что то пошло не так
+								like++
+								console.log(like)
+							})
+							
+							}
+						})
+					}
+				})
+				
+				
+			})
+
+			
+		})
+
+		
+
+
+	</script>
+</body>
+</html>

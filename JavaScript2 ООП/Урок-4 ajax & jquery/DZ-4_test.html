@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AJAX</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<select name="name" id="sel"></select>
+	<script>
+		$.ajax({
+			url:'https://dog.ceo/api/breeds/list/all',
+			type:'get',
+			dataType: 'json',
+			success: function(data){
+				var namePets = [];//Объявляем массив для сбора пород
+				for(var key in data.message){ //перебираем входящие данные
+ 					namePets.push(key); //ключ добавляем в массив
+				}
+				console.log(namePets); // выводим в консоль
+			}
+		})
+</script>
+</body>
+</html>

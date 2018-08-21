@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>RegExp</title>
+</head>
+<body>
+	<script>
+		var a1 = /car/
+		var str = 'abd by pay my car'
+		//alert(a1.test(str))//test вывод булевое значение естли поиск успешен
+		//alert(a1.test('acd pay by '))//test не нашол значение a1 выводит false
+
+		// ---
+
+		var phone = /\+?\d-\d{3}-\d{2}-\d{2}///патерн номера телефона
+		var numPh = '+7-923-23-23'
+		//alert(phone.test(numPh))
+
+		console.log('Maxim'.replace(/[im]/g, 'n'))
+		console.log('Maxim, Mokach'.replace(/([\w]+),([\w]+)/g, "$2 $1"))		
+	</script>
+</body>
+</html>

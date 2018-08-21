@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DZ-4</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="text.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+<div id="menu"></div>
+	
+	<script>
+
+
+		jQuery(document).ready(function($) {
+			$('#menu').append('<ul><li class="bb"><a href="#text1">На первое</a></li><li><a href="#text2">На второе</a></li><li><a href="#text3">И кампот</a></li></ul><div id="text1" class="text1 texth"></div>')
+			$('.text1').html(bigText.t1)
+			$('#menu').append('<div id="text2" class="text2 texth"></div>')
+			$('.text2').html(bigText.t2)
+			$('#menu').append('<div id="text3" class="text3 texth"></div>')
+			$('.text3').html(bigText.t3)
+
+				$('.texth').hide()
+				$('.text1').show()
+				$('li:first').addClass('bb')
+
+			$('li').click(function (event) {
+				$('li').removeClass('bb')
+				$(this).addClass('bb')
+				$('.texth').hide()
+
+				var select = $(this).find('a').attr('href')
+				$(select).fadeIn()
+			})	
+		})
+		
+
+
+	</script>
+</body>
+</html>
