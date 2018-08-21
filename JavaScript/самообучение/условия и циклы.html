@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Условия и циклы</title>
+</head>
+<body>
+	<script>
+		/*var income = 100;
+		if (income > 50) {
+			var message = "Доход больше 50";
+			alert(message);
+		}*/
+
+		/*var age = prompt("Не рано ли пить. Сколько вам лет?");
+		if (age >= 18) {
+			alert("Вам можно пить  водку");
+		} else alert("Подрости ссынок");*/
+
+		/*var income = prompt("Какой доход от 200 до 500");
+		if (income < 200) {
+			alert("Доход ниже среднего")
+		} else if (
+			income >=200 && income <= 400) {
+			alert("Средний доход");
+		} else if (
+			income >= 400 && income <= 800) {
+			alert("Высокий доход")
+		}
+		else {
+			alert("да ты охуел")
+		}*/
+
+		// true или false
+
+	/*	var income = +prompt("100 200 или 300")
+		switch(income) {//switch сравнивает значение в скобках с другими значениями в фигурных скобках после CASE
+				case 100 :
+				alert("равно 100");
+				break;
+				case 200 :
+				alert("равно 200");
+				break;
+				case 300 :
+				alert("равно 300");
+				break;
+			default :
+				alert("Введено другое число");
+				break;
+		}*/
+
+		/*Тернарная операция*/
+
+		/*var a = +prompt("Введи число A");//естли число а меньше то а + в
+		var b = +prompt("Введи число B");//если число а больше то а - в 
+		var result = a < b ? a + b : a - b;
+		alert(result)*/
+
+		// циклы
+
+		/*var people = ["Макс", "Васька", "Майя", "Виолетка", "Персик"];
+
+		for (var i = 0; i < people.length; i++) {
+			console.log(people[i]);
+		}*/
+
+		// в обратную сторону
+			/*var people = ["Макс", "Васька", "Майя", "Виолетка", "Персик"];
+
+		for (var i =  people.length -1;i >=0; i--) {
+			console.log(people[i]);}*/
+			
+			//for...in перебор массива и объектов
+
+			var people = ["Макс", "Васька", "Майя", "Виолетка", "Персик"];
+			for(var index in people) {
+				console.log(people[index])
+			}
+			
+
+	</script>
+</body>
+</html>

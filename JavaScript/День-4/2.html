@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function numObj(num)
+		{
+			var arrNumber = num.split("");//метод .split делит значение в масиве на части
+			while (arrNumber.length < 3) //цикл длинна массива меньше 3
+			{
+				arrNumber.unshift(0); //метод .unshift встовляет значение в начало массива
+			}
+			var objNumber = {};//создали пустой объект
+			if (arrNumber.length > 3) // естли длинна массива больше 3х выводит Null
+			{
+				return null;
+			}
+			else
+			{ //иначе 
+				objNumber["сотни"] = +arrNumber[0]; //первое число добовляет к массиву сотые
+				objNumber["десятки"] = +arrNumber[1]; //второе число десятые
+				objNumber["единицы"] = +arrNumber[2]; //еденицы
+				return objNumber;
+			}	
+		}
+		var max = 999; //максимально число
+		var min = 0; //минимальное число
+		var number = Math.round(Math.random() * (max - min) + min); //генератор чисел
+		number = String(number) // преобразуем число в строку
+		console.log("Получилось "+number+" число")// Выводим что бы увидить какое число получилось
+
+
+		var obj = numObj(number); //переменная переопределяет функция numObj 
+		if (obj == null) //если 0 то выводим это пользывателю
+		{
+			console.log("Object is null");
+		}
+		else //иначе выводим значение функции
+		{ 
+	console.log(obj);//Здесь выводим нужное
+}
+</script>
+</body>
+</html>

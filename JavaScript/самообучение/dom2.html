@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="article">
+		<h3>Заголовок</h3>
+		<p>Первый абзац</p>
+		<p>Второй абзац</p>
+	</div>
+
+	<script>
+		var articleDiv = document.querySelector("div.article")
+
+		var node = articleDiv.firstChild;//выбираем первый дочерний элемент
+		console.log(node.nodeName);//почему выводит text???
+		while((node=node.nextSibling)!==null){ //перебирает дочерние элементы рядом стоящие
+			console.log(node.nodeName)
+		}
+
+	</script>
+		
+</body>
+</html>

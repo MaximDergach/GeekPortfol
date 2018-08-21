@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Обрабтка событий</title>
+</head>
+<body>
+	<!-- //Обработка событий в html -->
+	<!-- <input type="button" id="b1" value="Ввести номер счёта " onclick="+prompt('Цыфорки введи для списсания')"> -->
+
+	<h1 id="header">Загаловок Событий</h1><!-- При нажатии на кнопку запускаится фунция  -->
+	<h2 id="twoHeader"></h2>
+	<button onclick="lubaiyaFunciya()">Кнопка НАЖАТЬ</button>
+	<hr>
+	<select name="select" id="select" onchange="change(this.value)"> <!-- This.value обращается к нашим конкретным value в функции  -->
+		<option value="red">red</option>
+		<option value="green">green</option>
+		<option value="cyan">cyan</option>
+		<option value="black">black</option>
+		<option value="yellow">yellow</option>
+		<option value="crimson">crimson</option>
+		<option value="pink">pink</option>
+	</select>
+
+
+	<script>
+		function change(v) { // -V- это и есть This.value 
+			document.getElementById("twoHeader").style.backgroundColor=v;
+			document.getElementById("twoHeader").innerHTML = v;
+			document.getElementById("twoHeader").style.color=v;
+			document.getElementById("header").style.color=v;//Выбрали элемент по ID и меняем стиль color на this.value 
+			//Изменим сдержимое header на this.value
+		}
+		function lubaiyaFunciya() {
+			document.getElementById("header").style.color="red";//button
+
+		}
+		/*
+		Событие Click происходит когда кликнули на элемент
+		Событие Maseover когда на элемент наводится мышь
+		Событие Focus когда пользователь фокусируетс на элементе
+		Событие KeyDown когда пользователь нажимает на клаву
+		*/
+
+	</script>
+
+</script>
+</body>
+</html>

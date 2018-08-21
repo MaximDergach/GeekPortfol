@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Slider</title>
+	
+</head>
+<body>
+	<style>
+		.it{
+			width: 50px;
+			height: 50px;
+			background-color: red;
+			margin: 10px;
+			display: none;
+		}
+		.item1{
+			display: inline-block;
+		}
+		input{
+			width: 100px;
+			height: 50px;
+		}
+
+	</style>
+
+	<div class="item1 it">1</div>
+	<div class="item2 it">2</div>
+	<div class="item3 it">3</div>
+	<div class="item4 it">4</div>
+
+	<input type="button" value="prev" class="prev">
+	<input type="button" value="next" class="next">
+	<script>
+		var prev = document.querySelector('.prev');
+		var next = document.querySelector('.next');
+
+		var image = document.querySelectorAll('.it');
+		var i = 0;
+		prev.onclick = function() {
+			image[i].style.display='block';
+			i--;
+
+			if (i == 0) {
+				i = image.length - 1;
+			}
+			image[i].style.display = "none";
+		}
+
+		next.onclick = function() {
+			image[i].style.display = 'block';
+			i++;
+			if (i >= image.length) {
+				i = 0;
+			}
+			image.style.display = 'none';
+		}
+	</script>
+</body>
+</html>

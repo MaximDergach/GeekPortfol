@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Замыкание</title>
+</head>
+<body>
+	<script>
+		//функциональное вырожение
+		var primer1 = function(a,b) {
+			var x = a + b;
+			console.log(x);
+		}
+		primer1(23,43);
+
+		var numb = function(){
+			console.log(arguments)
+		}
+		numb(1,2,3,4,5,6)
+
+
+
+		function fullName(age) {
+			console.log(this.firstName+ ' ' + this.lastName+ ' ' + age);
+		}
+
+		var user = {
+			firstName:'Максим',
+			lastName:'Дергач',
+			f:fullName
+		}
+		fullName.call(user,25);
+		console.log(user);
+
+		//Одалжевание методов
+
+		var commonShow = function() {
+			console.log("book "+this.title)
+		}
+		var book1 = {title:'js с нуля',show:commonShow};
+		var book2 = {title:'php с нуля'};
+		//Задача запустить свойство show из book1 в book2
+
+		book2.show=book1.show;
+		book1.show.call(book2);	
+		console.log(book1)
+		console.log(book2)
+		window.onload = btn;
+
+		var coLor = "pink";
+		var coLor2 = "green"
+		function run() {
+			document.getElementById('text').style.color=coLor;
+			coLor == 'pink'?coLor = 'red':coLor = 'pink';
+
+			setTimeout('run()',50);
+
+		}
+
+		function btn() {
+			document.getElementById('boom').onclick=run;
+		}
+	</script>
+
+	<h1 id="text">Мигание текста</h1>
+	<input type="button" value="Не Нажимай" id="boom">
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>object</title>
+</head>
+<body>
+	<script>
+		/*var user = { } //создание объекта
+		user.name= "Max";//Задали объекту свойство .name и значение "max"
+		user.age= 31;//Задали объекту свойство .age и значение 30(число)
+		console.log("Имя "+user.name)
+		console.log("Возраст "+user.age)
+		console.log(user) //Вывод объекта в только консоль другое не работает
+
+		var user2 = { //можно создать obj сразу с свойствами и значениями
+			name: "Vasilisa",
+			age: 30,
+			pol:'women'
+		}
+		console.log(user2)
+*/
+		//Кроме того можно определить obj другим способом
+
+	/*	var name = "Maya"; //создали переменные 
+		var age = 12; //
+			var userChild = {name, age, pol: "women"}; //создали переменную для obj, добавили переменные в obj
+			//добавили pol:women сложно сразу	
+			console.log(userChild); //все переменные появились в объъекте
+			console.log(userChild.age+" возраст и имя " + userChild.name);
+		var objMaya = {userChild, colorEye: "blue"}
+		console.log(objMaya.userChild);
+		console.log("Звет глаз " + 	objMaya.colorEye)
+*/
+
+	//Методы объектов
+	/*	var user = {} //создание объекта
+		user.name = "Max";//Задали объекту свойство .name и значение "max"
+		user.age = 31;//Задали объекту свойство .age и значение 30(число)
+		user.display = function() { //ананимная функция
+
+			console.log(user.name);
+			console.log(user.age);
+
+		}; 
+		var a = prompt("Покозать? (да/нет)")
+		if (a == "да") {
+			
+			user.display(); //Выводит метод функции user.display
+			alert("Посмотри в консоль")
+		} else if(a == "нет"){
+			alert("Как хочеш")
+		} else {
+			alert("Введено что то не то")
+		}
+*/
+
+/*	var user2 = { //можно создать obj сразу с свойствами и значениями
+			name: "Vasilisa",	
+			age: 30,
+			pol:'women',
+			"Full name": "Vasilisa Dergach", // Свойство в кавычках задаём когда несколько слов в свойстве
+			display(){
+				console.log(this.name, this.age)
+			},
+			move(place){ //свойство функции
+				console.log(this.name, "Что то тут", place) //place вставится из вывода функции с свойством
+			}
+		}
+		user2.display();
+		user2.move("непонятное"); //свойство ф-и которое "place" 
+		console.log(user2)
+		console.log(user2["Full name"]) //вывод такого свойства в кавычках производится через массив
+		//удаление свойства
+
+		delete user2.pol; //удаление свойства в объекте
+		console.log(user2)*/
+
+//вложеные объекты
+	var count ={
+		name:"Россия",
+		leng:"Росийский",
+			capital:{
+				name:"Москва",
+				population:21500759,
+				year:600
+			}
+	};
+
+	console.log("Столица " + count.capital.name);
+	console.log("Население " + count["capital"]["population"]); //Можно запросить массивы
+	console.log("Год основания " + count.capital.year);
+	
+	</script>
+</body>
+</html>

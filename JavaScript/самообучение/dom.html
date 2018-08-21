@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- <div id="header"></div>
+	<ol id="list">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ol> -->
+<!-- 
+	<div>
+		<h3>Заголовок</h3>
+		<p>Первый абзац</p>
+		<p>Второй абзац</p>
+	</div>
+ -->
+	<div class="article">
+		<h3>Заголовок статьи</h3>
+		<p class="text">1 абзац</p>
+		<p class="text">2 абзац</p>
+	</div>
+	<a href="artikle1.html">Статья1</a>
+	<a href="artikle2.html">Статья2</a>
+	<a href="artikle3.html">Статья3</a>
+	<script>
+		/*var header = document.getElementById("header");
+		header.innerHTML = "<h1>Заголовок</h1><p>Какойто текст</p>";
+		var par = document.getElementsByTagName("p");
+		header.className = "header-top";
+
+		//добавить элемент в конец 
+		var newLi = document.createElement("li");
+		newLi.innerHTML = "Hello worlds";
+		list.appendChild(newLi);
+		newLi.style.color = "red",
+		newLi.style.background = "pink";
+
+		//добавить элемент в любое место спомощь. массива list.children[0...length]
+
+		var newLi2 = document.createElement("span");
+		newLi2.innerHTML = "Второй элемент";
+		list.insertBefore(newLi2, list.children[1]);
+		newLi2.style.color="blue";
+
+		//создали новый div в header_е и поместили его в конец appendChild
+		var nav = document.createElement("div")
+		nav.innerHTML = "Новый элемент NAV"
+		header.appendChild(nav);
+		*/
+	var pElements = document.getElementsByTagName("p");
+	for (var i = 0; i < pElements.length, i < 2; i++) { //перебор массива pElement
+		document.write("Текст параграфа " +	pElements[i].innerHTML + " <br/>")
+	}
+
+	pElements[0].innerHTML = "Изменили этот абзац"//изменили спомощью массива
+
+	var articleDiv = document.getElementsByClassName("article")[0];
+		console.log(articleDiv);
+		var textElements = document.getElementsByClassName("text");
+			for (var i = 0; i < textElements.length; i++) {
+				console.log(textElements[i]);
+			}
+	var links = document.links;
+
+		for (var i = 0; i < links.length; i++) {
+			document.write("<br/> "+links[i].innerHTML);
+		}
+	var articleDiv = document.querySelector("div.article");
+	var nodes = articleDiv.childNodes;
+	for (var i = 0; i < nodes.length; i++) {
+
+		var type = "";
+		if (nodes[i]===1)
+			type = "Элемент";
+		else if (nodes[i]===2)
+			type = "фтрибут";
+		else if (nodes[i]===3)
+			type = "текст"
+
+		console.log(nodes[i]);
+	}
+
+
+
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>DZ_1</title>
+</head>
+<body>
+	<script>
+	//Задание 1
+
+//работает
+
+var i = 1;
+while(i <= 10) {
+	var k = 2;
+	var b = true;
+	while(k < i) {
+		if (i % k ==0) {
+			b = false; 
+		}
+		k++;
+	}
+	if (b == true) {
+		document.write(i+"<hr>");
+	}
+	i++;
+}
+/*onOn:
+for (var i = 2; i < 100; i++) {
+
+for (var j = 2; j < i; j++) {
+if (i % j == 0) continue onOn;
+}
+
+document.write( i+"<hr>");
+}
+*/
+
+//не работает!!! почему?
+/*onOn:
+var i = 2;
+while(i < 100) {
+	i++;
+	var k = 2;
+	while(k < i) {
+		k++;
+		if (i % k == 0)continue onOn;
+	document.write( i+"<hr>");
+	}
+}*/
+
+/*onOn:
+var i = 2;
+var k = 2;
+while(i < 100) {
+	i++;
+	do{
+		k++;
+		document.write( i+"<hr>")
+		if (i % k == 0) continue onOn;
+		}
+	while( k < i)
+}*/
+</script>
+</body>
+</html>

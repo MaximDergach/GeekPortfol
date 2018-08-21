@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>2</title>
+</head>
+<body>
+	<style>
+	#header{
+		max-width: 30%;
+		height: 100%;
+		margin: 0 auto;
+		padding-top: 100px;
+	}
+</style>
+<!-- //Обработка событий в html -->
+<!-- <input type="button" id="b1" value="Ввести номер счёта " onclick="+prompt('Цыфорки введи для списсания')"> -->
+<div id="header">
+	<button id="b1" >Go 1</button>
+	<button id="b2" >Go 2</button>
+	<button id="b3" >Go 3</button>
+	<button id="b4" onclick="alert('Ты нажал на Go 4')">Go 4</button>
+	<button id="b5" onclick="console.log('Go 5');document.getElementById('b4').click()">Go 5</button>
+	<button id="b6" >Go 6</button>	
+</div>
+<script>
+	function f() {
+		console.log(this);
+	}
+	var b2 = document.getElementById('b2');
+	var b3 = document.getElementById('b3');
+	b2.onclick=f;
+	b3.onclick = function() {
+		console.log(this);
+		b1.onclick=b2.click();	
+	}
+	var f1 = function(event) { //получение слушателя событий
+		console.log(event);
+	}
+	var b6 = document.getElementById('b6');
+		b6.addEventListener("click", f1)
+		/*
+		Событие Click происходит когда кликнули на элемент
+		Событие Maseover когда на элемент наводится мышь
+		Событие Focus когда пользователь фокусируетс на элементе
+		Событие KeyDown когда пользователь нажимает на клаву
+		*/
+
+	</script>
+
+</script>
+</body>
+</html>
