@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>While and For</title>
+</head>
+<body>
+	<script>
+	/*var i = 0;
+		while(i < 3) {
+			alert("Hello World");
+			i++;
+		}*/
+
+		/*for(var i = 0;i < 3;i++) {
+			alert("Hello World")
+		}*/
+
+		var answer = parseInt(Math.random() * 100);
+		while(true) {
+			var userAnswer = prompt("Введите число от 0 до 100, для выхода нажми q")
+			if (userAnswer == "q") {
+				break;
+			}
+			userAnswer = parseInt(userAnswer);
+
+			if (userAnswer > answer) {
+				alert("Ваше число слишком большое");
+
+			} else if (userAnswer < answer) {
+				alert("Ваше число слишком маленькое")
+			} else if (userAnswer == answer) {
+				alert("Вы угадали число " + answer);
+				break;
+			} else{
+				alert("Необходимо ввести число");
+			}
+		}
+		
+		
+
+	</script>
+</body>
+</html>

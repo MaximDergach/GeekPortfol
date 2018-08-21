@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var score = 0;
+		askQuestion("Зимой и летом одним цветом", "елка")
+		askQuestion("сто одежок и все без застёжок", "капуста")
+		askQuestion("Не лает не кусает в дом не пусккает", "замок")
+		function askQuestion(question, answer) {
+			var userAnswer = prompt(question)
+			userAnswer = userAnswer.toLowerCase();
+			if (userAnswer == answer) {
+				alert("Поздровляем вы угадали")
+				score++;
+			} else {
+				alert("Ошибка");
+			} 
+		}
+
+		alert("Вы угадали " + score + " загадок")
+	</script>
+</body>
+</html>

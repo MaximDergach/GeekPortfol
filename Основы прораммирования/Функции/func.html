@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Function</title>
+</head>
+<body>
+	<h3>Отгадай загадки!</h3>
+	<p>Сто одежек и все без застежек</p>
+	<input type="text" id="puzzle1"/>
+	<br><br><br>
+	<p>Зимой и летом одним цветом</p>
+	<input type="text" id="puzzle2"/>
+	<br><br><br>
+	<input type="button" onClick="Click1()" value="Ответить"/>
+	<script>
+		
+	 function checkAnswer(id, trueAnswer){
+     
+          var userAnswer = document.getElementById(id).value;
+          If (userAnswer == trueAnswer)
+               return true;
+          else
+          return false;
+     }
+
+     function checkAnswers(){
+     
+          var goodAnswers = 0;
+          if (checkAnswer('puzzle1', 'капуста'))
+               goodAnswers++;
+          if (checkAnswer('puzzle2', 'елка'))
+               goodAnswers++;
+          if (goodAnswers == 0)
+              alert('Вы ничего не угадали');
+          else
+          }
+	</script>
+</body>
+</html>
