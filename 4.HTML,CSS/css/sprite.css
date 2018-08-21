@@ -1,0 +1,81 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+
+/* LOGO */
+.icon-Bookssmoll {
+  background-image: url(../img/sprite.png);
+  background-position: 0px 0px;
+  width: 114px;
+  height: 73px;
+}
+/* замок */
+.icon-Layer {
+  background-image: url(../img/sprite.png);
+  background-position: -114px -82px;
+  width: 14px;
+  height: 13px;
+}
+/* Шарик с звездой */
+.icon-Shape10 {
+  background-image: url(../img/sprite.png);
+  background-position: -82px -73px;
+  width: 25px;
+  height: 25px;
+}
+/* карзина-тележка */
+.icon-Shape9 {
+  background-image: url(../img/sprite.png);
+  background-position: 0px -99px;
+  width: 27px;
+  height: 29px;
+}
+/* банк-карта-синея */
+.icon-american-express-curved-64px {
+  background-image: url(../img/sprite.png);
+  background-position: -114px 0px;
+  width: 40px;
+  height: 26px;
+}
+.icon-in-stock {
+  background-image: url(../img/sprite.png);
+  background-position: -114px -52px;
+  width: 30px;
+  height: 30px;
+}
+/* банк-карта-мастер */
+.icon-mastercard-curved-64px {
+  background-image: url(../img/sprite.png);
+  background-position: -114px -26px;
+  width: 40px;
+  height: 26px;
+}
+/* карта-пай-пал */
+.icon-paypal-curved-64px {
+  background-image: url(../img/sprite.png);
+  background-position: 0px -73px;
+  width: 41px;
+  height: 26px;
+}
+/* банк-карта-виза */
+.icon-visa-curved-64px {
+  background-image: url(../img/sprite.png);
+  background-position: -41px -73px;
+  width: 41px;
+  height: 26px;
+}
