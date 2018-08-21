@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Домашнее задание №1</title>
+</head>
+<body>
+	<script>
+// 		alert("При курсе валют Евро = 68.67руб и Доллар = 56.17руб")
+// 		var ru = parseInt(prompt("Введи количество денег в рублях:"));
+// 		var eu = 68.67;
+// 		var use = 56.17;
+
+// alert("Получится " + (ru / eu) + " руб/евро, и " + (ru / use) + " руб/доллар");
+
+	var roubles = parseInt(prompt("Ведите сумму в рублях"));
+	var oneEuro = 68.67;
+	var oneDollar = 56.17;
+
+	var euros = parseInt(roubles / oneEuro * 100) / 100;
+	var dollars = roubles / oneDollar;
+/* .toFixed(2)== это уберает после запитой 2 числа*/
+	alert(
+		roubles + " рублей = " + euros + " евро\n " + roubles + " рублей = " + dollars.toFixed(2) + " долларов" 
+		);
+	</script>
+</body>
+</html>

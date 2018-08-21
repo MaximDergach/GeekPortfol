@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Calculator</title>
+</head>
+<body>
+	<script>
+	
+		var summ = parseInt(prompt("Какую сумму желаите положить на счёт?"));
+		var procents = parseInt(prompt("Под какие проценты?"));
+		var years = parseInt(prompt("На сколко лет?"))
+
+		procents = procents / 100
+
+		var result = "Изменение вклада по годам\n"
+		for (var i = 1;i <= years;i++) {
+			summ = summ + (summ * procents);
+			result += i + " лет " + summ.toFixed(2) + " рублей\n"
+		}
+		alert(result);
+		
+		
+			
+		
+		/*alert(score + " " + procents + "процентов" + years + "лет");*/
+		
+	</script>
+</body>
+</html>

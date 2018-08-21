@@ -1,0 +1,55 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Загадки для дитей</title>
+</head>
+<body>
+	<script>
+	
+		var question;
+		
+		var total = 0;
+		
+		question = prompt("Лысый кот");
+		question = question.toLowerCase();
+		if (question == "сфинкс") {
+			total++;
+			alert("Правильно, М-я-я-я-у +1")
+		} else {
+			alert("Не угадал, фыр-фыр-фыр +0")
+		}
+
+				question = prompt("Сто одёжок и все без застёжок");
+		
+		if (question == "капуста" || question == "лук") {
+			total++;
+			alert("Правильно, э-э-э +1")
+		} else {
+			alert("Не угадал, у-у-у +0")
+		}
+
+				question = prompt("Зимой и летом одним цветом");
+		
+		if (question == "елка" || question == "ёлка" || question == "ель" || question == "ёлочка") {
+			total++;
+			alert("Правильно, дин-дон +1")
+		} else {
+			alert("Не угадал, бедолаго +0")
+		}
+
+			question = prompt("Не ездок, а со шпорами,Не будильник, а всех будит.")
+		if (question == "петух" || question == "петушок") {
+			total++;
+			alert("Правильно, к-у-к-а-р-е-к-у +1")
+		} else {
+			alert("Не угадал,кут-куда +0")
+		}	
+	
+	
+		alert("Молодец правельных ответов " + total)
+		alert("КОНЕЦ")
+document.write("Правельных ответов " + total)
+	</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+		var sum = parseInt(prompt("Сумма вклада"));
+		var procient = parseInt(prompt("Процентная ставка"));
+		var time = parseInt(prompt("Срок вклада"));
+
+		for (var i = 1;i <= time;i++) {
+			sum = sum + sum * procient /100;
+			alert("Прощло лет: " + i + ". Сумма на вкладе: " + Math.floor(sum));
+		}
+
+		
+
+
+
+	</script>
+</body>
+</html>

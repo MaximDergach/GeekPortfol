@@ -1,0 +1,36 @@
+<meta charset="utf-8">
+<script>
+	var mishen1 = 45;
+	var mishen2 = 67;
+	alert("Игра: Поподи в две виртуальные мишени\n" + " " + "Первая мишень расположена по углом от 40 до 60\n" + " Вторая мишень от 64 до 70")
+	var shoot1 = prompt("Под каким углом стрелять?")
+
+	if (shoot1 == mishen1 || (shoot1 < 45 && shoot1 >= 42) || (shoot1 <= 47 && shoot1 >= 45)) {
+		alert("Молодец попал")
+	} else {
+		alert("Мимо")
+		if (shoot1 < 40) {
+			alert("Слишком низко")
+		} else if (shoot1 > 48) {
+			alert("Слишком высоко")
+		}else if (shoot1 > 50) {
+			alert("Попал в самолёт")
+		}else if (shoot1 > 60) {
+			alert("В космос")
+		}
+	}
+	var shoot2 = prompt("Под каким углом стрелять?")
+	if (shoot2 == mishen2 || (shoot2 < 67 && shoot2 >= 64) || (shoot2 <= 70 && shoot2 >= 67)) {
+		alert("Молодец попал")
+	} else {
+		alert("Мимо")
+		if (shoot2 < 64) {
+			alert("Холодно")
+		} else if (shoot2 > 70) {
+			alert("Холодно")
+		}
+	}
+
+
+
+</script>
