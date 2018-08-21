@@ -1,0 +1,88 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.icon-Diamond {
+  background-image: url(../img/sprite.png);
+  background-position: -111px 0px;
+  width: 41px;
+  height: 33px;
+}
+.icon-FacebookSolid {
+  background-image: url(sprite.png);
+  background-position: -111px -33px;
+  width: 33px;
+  height: 33px;
+}
+.icon-GoogleSolid {
+  background-image: url(sprite.png);
+  background-position: -111px -66px;
+  width: 33px;
+  height: 33px;
+}
+.icon-LinkedInSolid {
+  background-image: url(sprite.png);
+  background-position: 0px -107px;
+  width: 33px;
+  height: 33px;
+}
+.icon-Pencil {
+  background-image: url(sprite.png);
+  background-position: 1px -69px;
+  width: 40px;
+  height: 38px;
+}
+.icon-Settings {
+  background-image: url(sprite.png);
+  background-position: -70px 0px;
+  width: 41px;
+  height: 41px;
+}
+.icon-Truck {
+  background-image: url(sprite.png);
+  background-position: -40px -69px;
+  width: 44px;
+  height: 33px;
+}
+.icon-TwitterSolid {
+  background-image: url(sprite.png);
+  background-position: -33px -107px;
+  width: 33px;
+  height: 33px;
+}
+.icon-Vedio-Icon {
+  background-image: url(sprite.png);
+  background-position: 0px 0px;
+  width: 70px;
+  height: 69px;
+  position: absolute;
+  top: 44%;
+  left: 44%;
+  z-index: 1000;
+}
+
+.icon-Vedio-Icon:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  
+  -webkit-cursor: pointer;
+  -moz-cursor: pointer;
+  -ms-cursor: pointer;
+  -o-cursor: pointer;
+  cursor: pointer;
+  
+}
