@@ -1,32 +1,36 @@
 import React, { Component } from 'react'
-
-const showbigImg = true
-
-const bigImgStyle = {
-
-	width: '120%',
-	height: '110%'
-}
+import Child from './img'
 
 
-
-const showImg = () => {
-		console.log('Проверка')
-
-	 showbigImg ? bigImgStyle : false
-
-	}
-
+//
 class ShowImg extends Component{
 //проверка обработчика событий
+
 //потом onclick переделать на картинку
-	
+		constructor() {
+			super();
+			this.state = {
+				childVisible: false
+			}
+		}
 
 	render() {
+	
 		return(
-			<button onClick={showImg} className='btn-click'>кнопка</button>
+			<div>
+				<button onClick={() => this.onClick()} className='btn-click'>кнопка</button>
+				{
+					this.state.childVisible ? <Child /> : null
+				}
+					
+			</div>//
 		)
 	}
+
+	onClick() {
+    this.setState({ childVisible: !this.state.childVisible 	});
+  }
 }
 
 export default ShowImg
+

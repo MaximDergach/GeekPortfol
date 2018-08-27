@@ -10,15 +10,16 @@ class ShopText extends Component{
 
 				<div className="logo"></div>
 				<div>
-					<img className="image"/>
+					
 				</div>
 				<h1>Тут Название товара</h1>
-
+					<ShowImg />
 					
-				<span className="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni quis, ea libero quam! Sit laborum esse blanditiis recusandae! Natus iure temporibus, dolore. Molestiae, eos ad modi recusandae assumenda facilis iste.
+				<span className="content">
+				Видео карты ноутбуки и много всякого
 				</span>
 
-					<ShowImg />
+					
 			</div>
 		)
 	}

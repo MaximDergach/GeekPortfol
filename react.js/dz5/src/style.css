@@ -28,7 +28,6 @@
 	background-image: url(img/phot01.jpg);
 	background-position: 50% 50%;
 	background-size: contain;
-	background-repeat: no-repeat;
 	float: right;
 	border: 1px solid #000;
 }
