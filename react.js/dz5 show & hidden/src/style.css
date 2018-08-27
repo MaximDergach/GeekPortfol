@@ -1,0 +1,34 @@
+.container{
+	background-color: coral;
+	width: 570px;
+	height: 200px;
+	margin: 0 auto;
+	padding: 50px;
+}
+
+.btn {
+	background-color: #ccc;
+}
+
+.logo{
+	background-image: url(img/logo.png);
+	background-repeat: no-repeat;
+	width: 185px;
+	height: 85px;
+}
+
+.content{
+	width: 300px;
+}
+
+.image{
+	width: 18%;
+	height: 100px;
+	background-color: coral;
+	background-image: url(img/phot01.jpg);
+	background-position: 50% 50%;
+	background-size: contain;
+	float: right;
+	border: 1px solid #000;
+}
+
