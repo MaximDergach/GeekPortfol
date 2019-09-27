@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript для теста</title>
+</head>
+<body>
+
+	<div id="Sentens" style="font-size: 24px">
+		<span>Напишите предложение</span>
+		<input type="text" placeholder="Введите текст"><br>
+		<span>Выбирите количество букв в слове</span>
+		<input type="number" placeholder="Введите число" id="number">
+		<span><br>Программа найдёт все слова в предложении с указанным количеством букв</span><br>
+		<button onclick="start()" value="Начать">Начать</button>
+		<button onclick="delText()" value="Очистить">Очистить</button>
+		<span>Результат в консоле</span>
+
+	</div>
+		
+	<script>
+	var result = [];
+	var root = true;
+	var spanDelAll = document.querySelectorAll('.spanValue')
+	function start(num){
+		var number = document.querySelector('#number').value;
+		var num = +number;
+		var sent = document.querySelector('input').value;
+		var sentens = document.getElementById('Sentens')	
+		var arr = sent;
+		
+		var later = arr.split(' ')
+		for(var x = 0;x < later.length;x++){
+
+			if(later[x].length === num){
+				result.unshift(later[x])
+
+			}
+		}	
+					console.log(result)
+
+					var span = document.createElement('span')
+					
+					span.style.color = 'red';
+					span.style.border = '2px solid #000';
+					span.style.margin = '5px 5px 5px 10px';
+
+					span.innerText = '';
+					var spanDelAll = document.querySelectorAll('.spanValue')
+
+					if(spanDelAll.length > 1){
+						delText()
+					}else{
+						span.innerText = ' ' + result + ' '
+					}
+					
+
+					sentens.appendChild(span)
+					span.className = 'spanValue'
+					
+					result = [];
+					root = false
+					return root
+
+	}
+	function delText(){
+		var spanDelAll = document.querySelectorAll('.spanValue')
+		for(var i = 0;i < spanDelAll.length;i++){
+			var spanDel = document.querySelector('.spanValue')
+			spanDel.parentNode.removeChild(spanDel)
+			result = [];
+		}
+	
+	}
+		
+		
+
+			
+	</script>	
+ </script>
+</body>
+</html>
