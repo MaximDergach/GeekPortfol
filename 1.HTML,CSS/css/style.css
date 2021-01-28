@@ -1,5 +1,5 @@
 body {
-	min-width: 1577px;
+	/*min-width: 1577px;*/
 	font-family: 'Open Sans', sans-serif;
 }
 h1 {
@@ -8,6 +8,7 @@ h1 {
 	text-transform: uppercase;
 	line-height: 72px;
 	color: rgba(0, 0, 0, 0.7);
+
 }
 
 h2 {
@@ -31,7 +32,7 @@ h4 {
 	color: #ffffff;
 	font-size: 42px; 
 	font-weight: 700;
-	line-height: 24px; 
+	line-height: 42px; 
 	text-align: center;
 }
 h5 {
@@ -51,18 +52,17 @@ p {
 	line-height: 28px;
 	color: rgba(0, 0, 0, 0.7);
 }
+
+
 .container {
 	max-width: 1250px;
 	margin: 0 auto;
 }
-.wrapper {
-	background-color: #f6f2f2;
-	height: 690px;
-}
+
 header {
-	min-width: 1240px;
-	height: 90px;
-	background-color: #313030;
+	max-width: 100%;
+	height: 690px;
+	
 	text-align: center;
 }
 
@@ -71,6 +71,9 @@ header  ul li{
 	height: 90px;
 	display: inline-block;	
 	margin-right: 40px;
+}
+nav{
+	background-color: #313030;
 }
 
 nav li:first-child {
@@ -134,7 +137,7 @@ header > article  p {
 }
 /*Видео*/
 .video-h {
-	width: 550px;
+	width: 100%;
 	height: 100%;
 	background-color: #c4c0b1;
 	box-shadow: 0px 14px 73px 0px rgba(0, 0, 0, 0.29);
@@ -193,16 +196,17 @@ video {
 }
 /*меню*/
 
-.flex-menu {
+#flex-menu-artic {
 	margin-top: 114px;
+	max-width: 100%;
 	display: flex;
-	justify-content: flex-start;
+	justify-content: space-between;
 	-ms-align-items: flex-start;
 }
 
 .services {
-	width: 642px;
-	height: 587px;
+	
+	height: 100%;
 	
 }
 /*флекс сервисы*/
@@ -229,14 +233,20 @@ video {
 	margin-top: 25px;
 	color: rgba(0, 0, 0, 0.7);
 }
-
+#flex-menu-artic h2, #flex-menu-artic p{
+	margin-bottom: 50px;
+}
+#flex-menu-artic article{
+	width: 50%;
+}
 /*Продукция*/
 .products {
 	padding-top: 80px;
+	margin: 0px 10px;
 }
 
 .products p {
-	width:510px ;
+	width:100% ;
 	margin:0 auto;
 	margin-top: 34px;
 	margin-bottom: 29px;
@@ -259,6 +269,8 @@ video {
 	text-align: center;
 	margin-top: 88px;
 	margin-bottom: 65px;
+	display: flex;
+	justify-content: center;
 }
 
 #products-item li a {
@@ -301,8 +313,9 @@ video {
 	display: -ms-flex;
 	display: -o-flex;
 	display: flex;
-	justify-content: flex-start;
-	flex-wrap: wrap
+	justify-content: center;
+	flex-wrap: wrap;
+	width: 100%;
 }
 .products-item {
 	width: 290px;
@@ -315,6 +328,7 @@ video {
 .me-team {
 	margin-top: 118px;
 	text-align: left;
+	margin: 0px 10px;
 }
 .me-team > p {
 	width: 446px;
@@ -333,9 +347,12 @@ video {
 	margin-bottom: 69px;
 }
 
-.me-team > article {
+.me-team article {
 	margin-top: 69px;
-	height: 458px;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
 	
 } 
 /*бльшое фото*/
@@ -344,7 +361,7 @@ video {
 	height: 458px;
 	background-color: rgb(245, 240, 222);
 	margin-right: 73px;
-	float: left;
+	
 }
 .big-img > img {
 	width: 100%;
@@ -360,7 +377,7 @@ video {
 	color:  rgba(0, 0, 0, 0.7);
 }
 .cont-right {
-	float: left;
+	
 }
 
 .cont-right ul {
@@ -394,13 +411,14 @@ video {
 	display: -ms-flex;
 	display: -o-flex;
 	display: flex;
-	justify-content: flex-start;
+	justify-content: center;
 }
 .image-item {
 	width: 197px;
 	height: 214px;
 	background-color: rgb(245, 240, 222);
 	margin-right: 19px;
+	margin-bottom: 15px;
 }
 
 .item1,.item2,
@@ -443,7 +461,7 @@ video {
 .subscrib {
 	padding-top: 140px;
 	width: 100%;
-	height: 368px;
+	height: 100%;
 	background-color: rgba(0, 0, 0, 0.19);
 	margin-top: 110px;
 }
@@ -455,7 +473,7 @@ video {
 }
 
 .subscrib  input {
-	float: left;
+	
 	border-radius: 5px;
 	background-color: #ffffff;
 	width: 487px;
@@ -465,6 +483,7 @@ video {
 #subscrib {
 	font-size: 22px;
 	font-style: italic;
+	margin-bottom: 10px;
 }
 
 input[placeholder] {
@@ -477,7 +496,7 @@ input[placeholder] {
 }
 
 .btn-sub {
-	float: left;
+	
 	border-radius: 5px;
 	background-color: #ff2d2d;
 	width: 214px;
@@ -491,11 +510,15 @@ input[placeholder] {
 }
 .sub-sub {
 	margin: 0 auto;
-	width: 782px;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
 .touch {
-	width: 720px;
+	width: 100%;
+	margin-top: 100px;
 }
 .touch > h2 {
 	padding-top: 126px;
@@ -507,9 +530,7 @@ input[placeholder] {
 
 form {
 	width: 740px;
-	float: left;
-	margin-bottom: 100px;
-	
+
 }
 input, textarea {
 	border: none;
@@ -524,6 +545,9 @@ form > #name {
 	font-weight: 400;
 	margin-right: 54px;
 	
+}
+input{
+	margin-bottom: 15px;
 }
 .touch > .sticer {
 	margin-bottom: 75px;
@@ -551,7 +575,7 @@ form > #name {
 	resize: none;
 }
 .contacts {
-	float: left;
+	
 	background-color: #2d2d2d;
 	width: 	478px;
 	height: 405px;
@@ -595,7 +619,11 @@ form > #name {
 	text-transform: uppercase;
 
 }
-
+#flex-form{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
 footer {
 	background-color: #2d2c2c;
 	width: 100%;
@@ -608,7 +636,8 @@ footer {
 	font-size: 16px; 
 	font-weight: 400;
 	line-height: 111px;
-	float: left;
+	width: 100%;
+	
 
 }
 
@@ -626,11 +655,11 @@ footer {
 }
 .social {
 	width: 100%;
-	display: inline-block;
+	display: flex;
+	justify-content: center;
 }
 
 .social span {
-	float: right;
 	line-height: 32px;
 	margin-top: 47px;
 	margin-right: 18px;
